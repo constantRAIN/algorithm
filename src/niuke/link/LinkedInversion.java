@@ -1,4 +1,4 @@
-package niuke;
+package niuke.link;
 
 import link.model.ListNode;
 
