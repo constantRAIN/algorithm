@@ -30,4 +30,19 @@ public class MoveZeroes283 {
 			nums[i] = newNums[i];
 		}
 	}
+
+	public void moveZeroes2(int[] nums) {
+		if (nums.length < 2) {
+			return;
+		}
+		int j = 0;
+		for (int i = 0; i < nums.length; i++) {
+			if (nums[i] != 0) {
+				int tmp = nums[i];
+				nums[i] = nums[j];
+				nums[j++] = tmp;
+			}
+		}
+
+	}
 }
