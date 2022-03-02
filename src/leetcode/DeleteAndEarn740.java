@@ -11,7 +11,7 @@ public class DeleteAndEarn740 {
         }
         int[] sum = new int[max + 1];
         for (int i = 0; i < nums.length; i++) {
-            sum[nums[i]] = nums[i];
+            sum[nums[i]] += nums[i];
         }
         return rob(sum);
     }
