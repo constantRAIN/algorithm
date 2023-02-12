@@ -30,4 +30,19 @@ public class RemoveNthFromEnd19 {
 		}
 		return head;
 	}
+
+	public ListNode removeNthFromEnd2(ListNode head, int n) {
+		ListNode prev = new ListNode(0, head);
+		ListNode first = head, second = prev;
+		for (int i = 0; i < n; i++) {
+			first = first.next;
+		}
+		while (first != null){
+			first = first.next;
+			second = second.next;
+		}
+		second.next = second.next.next;
+		return prev.next;
+	}
+
 }
