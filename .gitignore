@@ -15,7 +15,7 @@ mvnw
 mvnw.cmd
 HELP.md
 .mvn
-*/out/*
+out/*
 
 
 
