@@ -7,7 +7,9 @@ package sort;
 public class SelectSort {
 
 	public static void main(String[] args) {
-		int[] arr = {1,4,3,0,6,5};
+		int[] arr = {1, 4, 3, 0, 8,6, 5};
+
+		selectSort(arr);
 
 		for (int i = 0; i < arr.length; i++) {
 			System.out.print(arr[i]);
@@ -22,9 +24,27 @@ public class SelectSort {
 	 * 将它与未排序部分的第一个元素交换，
 	 * 然后将交换后的第一个元素归入已排序部分，
 	 * 直到未排序部分为空为止。
+	 *
 	 * @param arr
 	 */
-	public static void selectSort(int[] arr){
-		for
+	public static void selectSort(int[] arr) {
+		for (int i = 0; i < arr.length; i++) {
+			int position = i;
+			for (int j = i + 1; j < arr.length; j++) {
+				if (arr[j] < arr[position]) {
+					position = j;
+				}
+			}
+			swap(arr, i, position);
+		}
+	}
+
+	private static void swap(int[] arr, int i, int position) {
+		if (i == position) {
+			return;
+		}
+		int tmp = arr[i];
+		arr[i] = arr[position];
+		arr[position] = tmp;
 	}
 }
